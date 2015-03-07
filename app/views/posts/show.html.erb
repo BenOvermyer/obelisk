@@ -1,9 +1,7 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<article>
+  <h1 class="title"><%= @post.title %></h1>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+  <div class="body">
+    <%= markdown(@post.body) %>
+  </div>
+</article>

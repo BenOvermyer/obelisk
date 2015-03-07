@@ -3,18 +3,21 @@
 <table>
   <tr>
     <th>Title</th>
+    <th></th>
   </tr>
 
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.title %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post_path(post),
+      <td class="actions">
+        <%= link_to 'Show', post_path(post), class: "button tiny round" %>
+        <%= link_to 'Edit', edit_post_path(post), class: "button tiny round" %>
+        <%= link_to 'Destroy', post_path(post),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' }, class: "button tiny round alert" %>
+      </td>
     </tr>
   <% end %>
 </table>
 
-<%= link_to 'New post', new_post_path %>
+<%= link_to 'New post', new_post_path, class: "button round success" %>
