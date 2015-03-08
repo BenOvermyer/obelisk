@@ -8,7 +8,6 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -25,7 +24,7 @@
       <% end %>
         </ul>
       </nav>
-      <p class="site-title"><%= site_title %></p>
+      <p class="site-title"><%= link_to site_title, root_path %></p>
     </header>
 
     <div class="row">
@@ -36,5 +35,6 @@
       </div>
     </div>
 
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   </body>
 </html>

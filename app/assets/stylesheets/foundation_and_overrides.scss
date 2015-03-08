@@ -87,13 +87,13 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-// $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-// $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
-// $font-weight-normal: normal !default;
-// $font-weight-bold: bold !default;
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
 
 // $white       : #FFFFFF;
 // $ghost       : #FAFAFA;
@@ -126,7 +126,7 @@ $include-html-global-classes: $include-html-classes;
 // We use these to control various global styles
 // $body-bg: $white;
 // $body-font-color: $jet;
-// $body-font-family: $font-family-sans-serif;
+$body-font-family: $font-family-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -195,8 +195,8 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
-// $header-font-weight: $font-weight-normal;
+$header-font-family: $font-family-sans-serif;
+$header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
 // $header-font-color: $jet;
 // $header-line-height: 1.4;
@@ -205,9 +205,9 @@ $include-html-global-classes: $include-html-classes;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
-// $h2-font-size: rem-calc(37);
-// $h3-font-size: rem-calc(27);
+$h1-font-size: rem-calc(60);
+$h2-font-size: rem-calc(37);
+$h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
@@ -234,8 +234,8 @@ $include-html-global-classes: $include-html-classes;
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-// $paragraph-font-size: 1rem;
-// $paragraph-line-height: 1.6;
+$paragraph-font-size: 1.35rem;
+$paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
 // $paragraph-aside-line-height: 1.35;
@@ -1462,8 +1462,9 @@ header {
       li {
         list-style: none;
         float: left;
-        font-size: 0.75em;
-        margin: 0 0.5em;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        margin: 0 0.5rem;
         padding: 0;
         a {
           color: #ffee33;
@@ -1477,7 +1478,18 @@ header {
     padding: 0;
     line-height: 20px;
     font-size: 18px;
-    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+}
+
+ul.posts {
+  list-style: none;
+  margin: 0;
+  li {
+    list-style: none;
+    margin: 0;
   }
 }
 
