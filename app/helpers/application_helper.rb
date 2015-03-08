@@ -19,4 +19,8 @@ module ApplicationHelper
 
     markdown.render(text).html_safe
   end
+
+  def site_title
+    ENV["site_title"]
+  end
 end

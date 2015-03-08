@@ -1448,4 +1448,20 @@ $include-html-global-classes: $include-html-classes;
   font-family: monospace;
 }
 
+header {
+  margin: 0;
+  padding: 0;
+  height: 20px;
+  width: 100%;
+  background: #131313;
+
+  p.site-title {
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+    font-size: 18px;
+    color: #fff;
+  }
+}
+
 @import 'foundation';

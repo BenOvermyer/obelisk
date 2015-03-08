@@ -2,8 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+converter = new ( Showdown.converter )
+
 $('document').ready ->
-  converter = new ( Showdown.converter )
 
   $('#markdown-preview').html( converter.makeHtml( $('.markdown' ).val() ) )
   $('.markdown').css 'height', $('#markdown-preview').height() + 'px'

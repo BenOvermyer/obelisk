@@ -1,2 +1,10 @@
-<h1>Basic home.</h1>
-<%= link_to 'My Blog', controller: 'posts' %>
+<h1>Welcome.</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li class="post">
+      <p class="title"><%= link_to post.title, post_path(post) %></p>
+      <p class="summary">Summary here.</p>
+    </li>
+  <% end %>
+</ul>
