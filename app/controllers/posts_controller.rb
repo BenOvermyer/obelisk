@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :require_login, :only => [:new, :create, :edit, :index, :update, :destroy]
+
   def new
     @post = Post.new
   end
@@ -45,5 +47,9 @@ class PostsController < ApplicationController
   private
     def post_params
       params.require(:post).permit(:title, :body)
+    end
+
+    def require_login
+      redirect_to root_path, notice: 'Only logged-in users can do that.' unless current_user
     end
 end
