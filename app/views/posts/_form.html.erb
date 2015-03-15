@@ -25,6 +25,15 @@
      </div>
    </div>
    <div class="row">
+     <div class="small-12 columns">
+       <span>Published?</span>
+       <%= f.check_box :is_published %>
+       <% if @post.is_published %>
+       <cite>Published at <%= @post.published_at.strftime("%l:%M %p on %A %b %d, %Y") %></cite>
+       <% end %>
+     </div>
+   </div>
+   <div class="row">
      <div class="small-6 columns">
        <%= f.text_area :body, :class => 'markdown' %>
      </div>

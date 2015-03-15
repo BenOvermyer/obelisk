@@ -1493,4 +1493,22 @@ ul.posts {
   }
 }
 
+p.date {
+  color: #aaa;
+  font-family: $font-family-sans-serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 0.5rem;
+}
+
+div.meta {
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  span {
+    color: #aaa;
+    font-family: $font-family-sans-serif;
+  }
+}
+
 @import 'foundation';

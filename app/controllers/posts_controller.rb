@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+
+    @page_title = 'New Post'
   end
 
   def create
@@ -24,14 +26,20 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+
+    @page_title = 'Edit Post'
   end
 
   def index
     @posts = Post.all
+
+    @page_title = 'Posts'
   end
 
   def show
     @post = Post.find(params[:id])
+
+    @page_title = @post.title
   end
 
   def update
@@ -46,7 +54,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :summary, :body)
+      params.require(:post).permit(:title, :summary, :body, :is_published)
     end
 
     def require_login
