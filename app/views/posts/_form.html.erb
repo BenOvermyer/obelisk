@@ -1,0 +1,50 @@
+<%= form_for @post do |f| %>
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being saved:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="row">
+     <div class="small-12 columns">
+       <%= f.text_field :title %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="small-12 columns">
+       <%= f.text_area :summary %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="small-12 columns">
+       <span>Published?</span>
+       <%= f.check_box :is_published %>
+       <% if @post.is_published %>
+       <cite>Published at <%= @post.published_at.strftime("%l:%M %p on %A %b %d, %Y") %></cite>
+       <% end %>
+     </div>
+   </div>
+   <div class="row">
+     <div class="small-6 columns">
+       <%= f.text_area :body, :class => 'markdown' %>
+     </div>
+     <div class="small-6 columns">
+       <div id="markdown-preview"></div>
+     </div>
+   </div>
+
+   <div class="row">
+     <div class="small-12 columns">
+       <%= f.submit 'Save', :class => "button success round" %>
+     </div>
+   </div>
+<% end %>

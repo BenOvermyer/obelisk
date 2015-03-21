@@ -1,0 +1,25 @@
+<h1>All Posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Published</th>
+    <th></th>
+  </tr>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><% if post.is_published %><%= post.published_at %><% end %></td>
+      <td class="actions">
+        <%= link_to 'Show', post_path(post), class: "button tiny round" %>
+        <%= link_to 'Edit', edit_post_path(post), class: "button tiny round" %>
+        <%= link_to 'Destroy', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "button tiny round alert" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New post', new_post_path, class: "button round success" %>

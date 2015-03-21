@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><% if defined?(@page_title) %><%= @page_title %> | <% end %><%= site_title %></title>
+    <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <header>
+      <nav>
+        <ul>
+      <% if current_user %>
+          <li><%= link_to 'Posts', posts_path %></li>
+          <li><%= link_to 'Logout', log_out_path %></li>
+      <% else %>
+          <li><%= link_to 'Login', log_in_path %></li>
+      <% end %>
+        </ul>
+      </nav>
+      <p class="site-title"><%= link_to site_title, root_path %></p>
+    </header>
+
+    <div class="row">
+      <div class="small-12 columns">
+
+        <%= yield %>
+
+      </div>
+    </div>
+
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  </body>
+</html>

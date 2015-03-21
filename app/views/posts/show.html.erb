@@ -1,0 +1,13 @@
+<article>
+  <h1 class="title"><%= @post.title %></h1>
+
+  <div class="meta">
+    <% if @post.is_published %>
+    <span>Published at: <%= @post.published_at.strftime("%l:%M %p on %A %b %d, %Y") %></span>
+    <% end %>
+  </div>
+
+  <div class="body">
+    <%= markdown(@post.body) %>
+  </div>
+</article>
