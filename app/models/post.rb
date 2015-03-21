@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   validates :title, presence: true, length: { minimum: 7 }
 
   before_save :check_publish
