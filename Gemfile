@@ -29,6 +29,8 @@ gem 'foundation-rails'
 gem 'figaro'
 # Bcrypt!
 gem 'bcrypt'
+# For pretty URLs
+gem 'friendly_id', '~> 5.1.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
