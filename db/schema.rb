@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150315193156) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150315193156) do
     t.boolean  "is_published", default: false
   end
 
-  add_index "posts", ["published_at"], name: "index_posts_on_published_at"
+  add_index "posts", ["published_at"], name: "index_posts_on_published_at", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
