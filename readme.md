@@ -4,7 +4,7 @@
 
 A blogging engine built on Ruby on Rails. It's specifically built for my personal blog, http://benovermyer.com, though with a bit of tweaking on the visual side can be used for any blog site.
 
-The intent is to have a full blog engine by the end of Q1 2015. Details on this plan are available at the [afore-mentioned blog](http://benovermyer.com).
+Obelisk is very minimalistic. It supports posts, but not pages. It assumes that it will only be used as a blog, not a CMS. In this, it serves a singular purpose.
 
 ### License
 
