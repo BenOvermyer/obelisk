@@ -87,8 +87,8 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-$font-family-sans-serif: 'Montserrat', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-sans-serif: 'Bubblegum Sans', Helvetica, Roboto, Arial, cursive, sans-serif;
+$font-family-serif: 'Gentium Basic', Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
@@ -434,10 +434,10 @@ $paragraph-line-height: 1.6;
 // $button-font-family: $body-font-family;
 // $button-font-color: $white;
 // $button-font-color-alt: $oil;
-// $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(13);
-// $button-font-med: rem-calc(16);
-// $button-font-lrg: rem-calc(20);
+$button-font-tny: rem-calc(16);
+$button-font-sml: rem-calc(18);
+$button-font-med: rem-calc(20);
+$button-font-lrg: rem-calc(24);
 // $button-font-weight: $font-weight-normal;
 // $button-font-align: center;
 
@@ -1450,11 +1450,11 @@ $paragraph-line-height: 1.6;
 
 header {
   margin: 0;
-  padding: 0;
-  height: 20px;
+  padding: 1.25rem;
   width: 100%;
-  background: #131313;
+  border-bottom: 1px solid #efefef;
   nav {
+    margin-top: -1.25rem;
     float: right;
     ul {
       list-style: none;
@@ -1462,24 +1462,23 @@ header {
       li {
         list-style: none;
         float: left;
-        font-size: 1rem;
-        line-height: 1.25rem;
-        margin: 0 0.5rem;
+        margin: 0;
+        margin-left: 1rem;
+        margin-top: 0.5rem;
         padding: 0;
-        a {
-          color: #ffee33;
-        }
       }
     }
   }
 
+
   p.site-title {
     margin: 0;
     padding: 0;
-    line-height: 20px;
-    font-size: 18px;
+    line-height: 1.25rem;
+    font-size: 1.75rem;
+    font-weight: $font-weight-bold;
     a {
-      color: #fff;
+      color: #000;
     }
   }
 }
@@ -1490,6 +1489,7 @@ ul.posts {
   li {
     list-style: none;
     margin: 0;
+    border-bottom: 1px solid #efefef;
   }
 }
 
@@ -1501,13 +1501,39 @@ p.date {
   line-height: 0.5rem;
 }
 
-div.meta {
-  border-bottom: 1px solid #aaa;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  span {
-    color: #aaa;
-    font-family: $font-family-sans-serif;
+article.post {
+  padding-top: 2rem;
+
+  h1 {
+    text-align: center;
+    line-height: 4rem;
+    font-size: 5rem;
+  }
+
+  div.meta {
+    margin: 3rem 0;
+    text-align: center;
+    span {
+      color: #000;
+      font-family: $font-family-serif;
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+  }
+
+  div.divider {
+    height: 2px;
+    width: 200px;
+    background: #eee;
+    margin: 3rem auto;
+  }
+
+  div.summary {
+    text-align: center;
+    p {
+      color: #aaa;
+      font-size: 2rem;
+    }
   }
 }
 

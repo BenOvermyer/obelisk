@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><% if defined?(@page_title) %><%= @page_title %> | <% end %><%= site_title %></title>
-    <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Bubblegum+Sans|Gentium+Basic' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
@@ -17,10 +17,10 @@
       <nav>
         <ul>
       <% if current_user %>
-          <li><%= link_to 'Posts', posts_path %></li>
-          <li><%= link_to 'Logout', log_out_path %></li>
+          <li><%= link_to 'Posts', posts_path, :class => 'button round secondary tiny' %></li>
+          <li><%= link_to 'Logout', log_out_path, :class => 'button round secondary tiny' %></li>
       <% else %>
-          <li><%= link_to 'Login', log_in_path %></li>
+          <li><%= link_to 'Login', log_in_path, :class => 'button round secondary tiny' %></li>
       <% end %>
         </ul>
       </nav>
@@ -28,7 +28,7 @@
     </header>
 
     <div class="row">
-      <div class="small-12 columns">
+      <div class="small-9 small-centered columns">
 
         <%= yield %>
 
